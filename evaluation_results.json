@@ -1,13 +1,16 @@
-print("=" * 50)
-print("RESULTS COMPARISON")
-print("=" * 50)
-print(f"{'Model':<35} {'Accuracy':>8}")
-print("-" * 45)
-print(f"{'Zero-shot baseline (Groq)':<35} {bl_accuracy:>8.3f}")
-print(f"{'Fine-tuned DistilBERT':<35} {ft_accuracy:>8.3f}")
-print("-" * 45)
-delta = ft_accuracy - bl_accuracy
-direction = "improvement" if delta >= 0 else "regression"
-print(f"\nFine-tuning {direction}: {abs(delta):.3f}")
+results = {
+    "baseline_accuracy": round(bl_accuracy, 4),
+    "finetuned_accuracy": round(ft_accuracy, 4),
+    "improvement": round(ft_accuracy - bl_accuracy, 4),
+    "test_set_size": len(test_df),
+    "label_map": LABEL_MAP,
+    "model": MODEL_NAME,
+}
+with open("evaluation_results.json", "w") as f:
+    json.dump(results, f, indent=2)
+
+print("✅ Files ready to download:")
+print("   evaluation_results.json  — metrics for your README")
+print("   confusion_matrix.png     — include in your README")
 print()
-print("Use these numbers in your README evaluation report.")
+print("Download via: Files panel (📁) on the left → right-click → Download")
