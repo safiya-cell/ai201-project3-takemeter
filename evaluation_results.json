@@ -1,0 +1,13 @@
+print("=" * 50)
+print("RESULTS COMPARISON")
+print("=" * 50)
+print(f"{'Model':<35} {'Accuracy':>8}")
+print("-" * 45)
+print(f"{'Zero-shot baseline (Groq)':<35} {bl_accuracy:>8.3f}")
+print(f"{'Fine-tuned DistilBERT':<35} {ft_accuracy:>8.3f}")
+print("-" * 45)
+delta = ft_accuracy - bl_accuracy
+direction = "improvement" if delta >= 0 else "regression"
+print(f"\nFine-tuning {direction}: {abs(delta):.3f}")
+print()
+print("Use these numbers in your README evaluation report.")
