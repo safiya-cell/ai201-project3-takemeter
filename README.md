@@ -18,3 +18,7 @@ wrong_idx = np.where(ft_pred_ids != ft_true_ids)[0] --> it does not know where t
       6 
 
 NameError: name 'np' is not defined
+
+
+# AI Usage
+I asked AI to to generate 5–10 posts that sit at the boundary between two labels and identify patterns.
