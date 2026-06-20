@@ -10,3 +10,11 @@ plt.tight_layout()
 plt.savefig("confusion_matrix.png", dpi=150)
 plt.show()
 print("✅ Saved: confusion_matrix.png  →  commit this to your repo and include in README")
+
+
+
+wrong_idx = np.where(ft_pred_ids != ft_true_ids)[0] --> it does not know where to map the results
+      5 print(f"Wrong predictions: {len(wrong_idx)} / {len(ft_true_ids)}\n")--> there is no defined length
+      6 
+
+NameError: name 'np' is not defined
